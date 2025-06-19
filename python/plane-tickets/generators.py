@@ -26,7 +26,7 @@ def generate_seats(number):
     result = ''
     number = number + 4 if number >= 13 else number
     seat_letter = generate_seat_letters(number)
-    result = (str(row_number) + next(seat_letter_generator) for seat in range(number)if (row_number := seat // 4 + 1) != 13)
+    result = (str(row_number) + next(seat_letter) for seat in range(number)if (row_number := seat // 4 + 1) != 13)
     return result
 
 def assign_seats(passengers):
