@@ -1,4 +1,8 @@
 pub fn isIsogram(str: []const u8) bool {
-    _ = str;
-    @compileError("please implement the isIsogram function");
+    for (str) |c| {
+        std.debug.print(c);
+    }
+}
+pub fn main() !void {
+    isIsogram("abc");
 }
