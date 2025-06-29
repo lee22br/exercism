@@ -12,6 +12,7 @@ pub fn countNucleotides(s: []const u8) NucleotideError!Counts {
     const ascii_C = 67; // 'C
     const ascii_G = 71; // 'G'
     const ascii_T = 84; // 'T'
+    const erroIvnvalid: NucleotideError = error.Invalid;
     var dnaCount: Counts = .{
         .a = 0,
         .c = 0,
@@ -23,6 +24,11 @@ pub fn countNucleotides(s: []const u8) NucleotideError!Counts {
         if (ascii_C == ch) dnaCount.c += 1;
         if (ascii_G == ch) dnaCount.g += 1;
         if (ascii_T == ch) dnaCount.t += 1;
+        if (ch != ascii_A and ch != ascii_C and
+            ch != ascii_G and ch != ascii_T)
+        {
+            return erroIvnvalid;
+        }
     }
     return dnaCount;
 }
