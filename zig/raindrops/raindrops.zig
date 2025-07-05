@@ -10,7 +10,7 @@ pub fn convert(buffer: []u8, n: u32) []const u8 {
     if (isPlang) stream.writer().writeAll("Plang") catch unreachable;
     if (isPlong) stream.writer().writeAll("Plong") catch unreachable;
 
-    if (!isPlang and !isPlang and !isPlong) {
+    if (!isPling and !isPlang and !isPlong) {
         stream.writer().print("{d}", .{n}) catch unreachable;
     }
 
