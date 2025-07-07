@@ -1,5 +1,21 @@
+const std = @import("std");
+
+pub const ColorBand = enum {
+    black,
+    brown,
+    red,
+    orange,
+    yellow,
+    green,
+    blue,
+    violet,
+    grey,
+    white,
+};
+
+
 pub fn colorCode(color: ColorBand) usize {
-    @compileError("determine the value of a colorband on a resistor");
+    return @enumToInt(color);
 }
 
 pub fn colors() []const ColorBand {
