@@ -15,9 +15,9 @@ pub const ColorBand = enum {
 
 
 pub fn colorCode(color: ColorBand) usize {
-    return @enumToInt(color);
+    return @intFromEnum(color);
 }
 
 pub fn colors() []const ColorBand {
-    @compileError("refer to a collection of all resistor colorbands");
+    return std.enums.values(ColorBand);
 }
