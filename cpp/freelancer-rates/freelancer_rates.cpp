@@ -3,9 +3,8 @@
 
 // daily_rate calculates the daily rate given an hourly rate
 double daily_rate(double hourly_rate) {
-    // TODO: Implement a function to calculate the daily rate given an hourly
-    // rate
-    return 0.0;
+    const int dailyHour = 8;
+    return hourly_rate * 8;
 }
 
 // apply_discount calculates the price after a discount
