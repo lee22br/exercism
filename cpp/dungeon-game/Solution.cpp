@@ -1,10 +1,13 @@
 #include <iostream>
 #include <vector>
 
+using std::vector;
+using std::max;
+
 class Solution {
 
 public:
-    static int calculateMinimumHP(std::vector<std::vector<int>>& dungeon) {
+    static int calculateMinimumHP(vector<vector<int>>& dungeon) {
         int tabX, tabY, lastPosX, lastPosY;
         int right, down;
         tabX = dungeon.size();
@@ -13,7 +16,7 @@ public:
         lastPosY = tabY - 1;
 
         // store the matrix with min health
-        std::vector<std::vector<int>> pathMin(tabX, std::vector<int>(tabY, 0));
+        vector<vector<int>> pathMin(tabX, vector<int>(tabY, 0));
 
         for (int posX = lastPosX; posX >= 0; posX--) {
             for (int posY = lastPosY; posY >= 0; posY--) {
@@ -49,7 +52,7 @@ public:
                     } else {
                         down = 0;
                     }
-                    pathMin[posX][posY] = std::max(right, down);
+                    pathMin[posX][posY] = max(right, down);
                 }
             }
         }
@@ -58,10 +61,18 @@ public:
 };
 
 int main (){
-    std::vector<std::vector<int>> input = {{0}}; //expected 1
-    std::vector<std::vector<int>> input2 = {{-2,-3,3},{-5,-10,1},{10,30,-5}}; //expected 7
+    vector<vector<int>> input = {{0}}; //expected 1
+    vector<vector<int>> input2 = {
+        {-2,-3,3},
+        {-5,-10,1},
+        {10,30,-5}
+    }; //expected 7
+    vector<vector<int>> input3 = {
+        {2,-3,3},
+        {5,-10,1},
+        {10,30,-5}}; //expected 1
 
-    int result = Solution::calculateMinimumHP(input);
+    int result = Solution::calculateMinimumHP(input2);
 
     printf("Minimun Life is: %d", result);
 
