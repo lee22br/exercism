@@ -13,6 +13,8 @@ Floating point numbers are numbers with a decimal point like `6.02214076`, `0.1`
 ## Integers
 The following example shows the declaration and initialization of four different variables 
 
+
+
 ```cpp
 int m_morales{9241};              // base 10: 0-9
 int a_apaec{0x24CD};              // base 16: 0-9 and A-F
