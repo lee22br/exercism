@@ -1,6 +1,14 @@
 object EliudsEggs {
 
     fun eggCount(number: Int): Int{
-        TODO("Implement this function to complete the task")
+        var count = 0
+        var odd = number
+        while (odd > 0) {
+            if (odd % 2 != 0) {
+                count ++
+            }
+            odd = odd / 2
+        }
+        return count
     }
 }
