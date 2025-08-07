@@ -10,7 +10,6 @@ data Planet = Mercury
             | Neptune
 
 ageOn :: Planet -> Float -> Float
-ageOn planet seconds =
 ageOn Earth seconds = seconds / 31557600
 ageOn Mercury seconds = ageOn Earth seconds / 0.2408467
 ageOn Venus seconds = ageOn Earth seconds / 0.61519726
