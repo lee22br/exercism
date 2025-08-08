@@ -1,6 +1,7 @@
 object Isogram {
 
     fun isIsogram(input: String): Boolean {
-        TODO("Implement this function to complete the task")
+        var letters = input.filter { c -> c.isLetter() }.toLowerCase().toSet().size
+        return input.replace(" ", "").replace("-", "").length == letters
     }
 }
