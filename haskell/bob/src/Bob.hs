@@ -1,5 +1,4 @@
 module Bob (responseFor) where
-
 import Data.Char
 import Data.List
 
@@ -10,6 +9,6 @@ responseFor xs
                                 else "Sure."
     | isYelling = "Whoa, chill out!"
     | otherwise = "Whatever."
-    where isQuestion = last (dropWhileEnd isSpace xs) == '?'
+    where isQuestion = last (filter (not . isSpace) xs) == '?'
           letters = filter isLetter xs
           isYelling = length letters /= 0 && all isUpper letters
