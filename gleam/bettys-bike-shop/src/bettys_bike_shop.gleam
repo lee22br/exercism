@@ -2,7 +2,7 @@ import gleam/float
 import gleam/int
 import gleam/string
 
-fn pence_to_pounds(pence) {
+pub fn pence_to_pounds(pence) {
   int.to_float(pence) /. 100.0
 }
 
